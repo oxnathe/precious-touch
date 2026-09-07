@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
-const image = "public/images/home/process.jpeg";
+const image = " /images/home/process.jpeg";
 
 const steps = [
   {

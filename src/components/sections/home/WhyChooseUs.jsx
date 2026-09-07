@@ -6,7 +6,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const image = "public/images/home/why.png";
+const image = "v";
 
 const reasons = [
   {
