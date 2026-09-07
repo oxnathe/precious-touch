@@ -1,152 +1,169 @@
 import { motion } from "motion/react";
-import {
-  ArrowUpRight,
-  MessageCircle,
-  Sparkles,
-  CheckCircle2,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+
+const image = "public/images/home/process.jpeg";
 
 const steps = [
   {
     number: "01",
     title: "Tell us what you need",
     description:
-      "Reach out through WhatsApp or phone and tell us about the cleaning or laundry service you need.",
-    icon: MessageCircle,
+      "Send us a message and let us know what needs cleaning, washing, ironing, or refreshing.",
   },
   {
     number: "02",
     title: "We understand the job",
     description:
-      "We discuss the service details with you and make sure we understand exactly what you need.",
-    icon: Sparkles,
+      "We discuss the details, understand your requirements, and arrange the service around you.",
   },
   {
     number: "03",
     title: "We get to work",
     description:
-      "Once everything is clear, our team gets to work delivering the care your space or clothes need.",
-    icon: CheckCircle2,
+      "Our team arrives ready to deliver a professional clean with the attention your space deserves.",
   },
 ];
 
-function Process() {
+export default function Process() {
+  const whatsappNumber = "2349019028248";
+
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent(
+      "Hello Precious Touch, I would like to book a cleaning service."
+    );
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
-    <section className="relative overflow-hidden bg-precious-light py-24 text-precious-dark sm:py-28 lg:py-36">
-      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-precious-cyan/10 blur-3xl" />
+    <section className="relative overflow-hidden bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-3xl"
-        >
-          <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-precious-cyan" />
-
-            <span className="font-montserrat text-xs font-semibold uppercase tracking-[0.25em] text-precious-blue">
-              Simple process
+        {/* HEADER */}
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <span className="mb-5 inline-flex items-center gap-2 font-montserrat text-[10px] font-semibold uppercase tracking-[0.25em] text-precious-blue">
+              <span className="h-1.5 w-1.5 rounded-full bg-precious-cyan" />
+              How It Works
             </span>
+
+            <h2 className="font-oswald text-5xl font-medium leading-[0.95] tracking-tight text-precious-dark sm:text-6xl lg:text-7xl">
+              Clean.
+              <span className="block text-precious-blue">Simple.</span>
+              <span className="block">Done.</span>
+            </h2>
           </div>
 
-          <h2 className="mt-6 font-oswald text-5xl font-semibold uppercase leading-[0.9] tracking-tight sm:text-6xl lg:text-7xl">
-            Clean.
-            <br />
-            Simple.
-            <br />
-            <span className="text-precious-blue">Done.</span>
-          </h2>
-
-          <p className="mt-7 max-w-xl font-poppins text-sm leading-8 text-precious-dark/55 sm:text-base">
-            Getting professional cleaning and laundry care should not feel
-            complicated. Tell us what you need and we&apos;ll take it from
-            there.
+          <p className="max-w-xl font-poppins text-sm leading-7 text-black/55 lg:ml-auto lg:text-base">
+            Getting professional cleaning and laundry care should not be
+            complicated. Tell us what you need, and we take care of the rest.
           </p>
+        </div>
+
+        {/* IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+          className="relative mt-14 h-[280px] overflow-hidden rounded-[2rem] md:h-[380px]"
+        >
+          <img
+            src={image}
+            alt="Precious Touch cleaning service"
+            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            loading="lazy"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-precious-dark/70 via-precious-dark/20 to-transparent" />
+
+          <div className="absolute inset-y-0 left-0 flex max-w-lg items-center p-7 md:p-12">
+            <div>
+              <p className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.25em] text-precious-cyan">
+                Professional service
+              </p>
+
+              <h3 className="mt-3 font-oswald text-3xl leading-tight text-white md:text-5xl">
+                We handle the work.
+                <br />
+                You enjoy the fresh.
+              </h3>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Steps */}
-        <div className="relative mt-20">
-          <div className="absolute left-[8%] right-[8%] top-16 hidden h-px bg-precious-dark/10 lg:block" />
+        {/* STEPS */}
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.08,
+              }}
+              className="group rounded-[1.75rem] border border-black/10 bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-precious-cyan/40 hover:shadow-xl"
+            >
+              <div className="flex items-start justify-between">
+                <span className="font-oswald text-5xl font-medium text-precious-blue/20 transition-colors duration-500 group-hover:text-precious-cyan/30">
+                  {step.number}
+                </span>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
+                <CheckCircle2
+                  size={21}
+                  strokeWidth={1.5}
+                  className="text-precious-cyan"
+                />
+              </div>
 
-              return (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 35 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{
-                    duration: 0.65,
-                    delay: index * 0.1,
-                  }}
-                  className="group relative rounded-3xl border border-precious-dark/10 bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-precious-cyan/50 hover:shadow-xl sm:p-8"
-                >
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-precious-dark font-montserrat text-xs font-semibold text-white transition-all duration-500 group-hover:bg-precious-cyan group-hover:text-precious-dark">
-                      {step.number}
-                    </span>
+              <h3 className="mt-8 font-oswald text-2xl text-precious-dark">
+                {step.title}
+              </h3>
 
-                    <Icon
-                      size={22}
-                      strokeWidth={1.5}
-                      className="text-precious-blue/35 transition-colors duration-500 group-hover:text-precious-cyan"
-                    />
-                  </div>
-
-                  <h3 className="mt-14 font-oswald text-3xl font-medium uppercase leading-none sm:text-4xl">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-5 font-poppins text-sm leading-7 text-precious-dark/50">
-                    {step.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+              <p className="mt-4 font-poppins text-sm leading-7 text-black/50">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="mt-12 flex flex-col gap-6 rounded-3xl bg-precious-blue p-8 text-white sm:p-10 md:flex-row md:items-center md:justify-between"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-8 flex flex-col items-start justify-between gap-6 rounded-[1.75rem] bg-precious-dark p-7 md:flex-row md:items-center md:p-9"
         >
           <div>
-            <p className="font-oswald text-3xl uppercase leading-none sm:text-4xl">
-              Ready when you are.
+            <p className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.22em] text-precious-cyan">
+              Ready when you are
             </p>
 
-            <p className="mt-3 max-w-lg font-poppins text-sm leading-7 text-white/50">
-              Start with a simple message and let&apos;s discuss what you
-              need.
-            </p>
+            <h3 className="mt-2 font-oswald text-2xl text-white md:text-3xl">
+              Let's get your space feeling fresh.
+            </h3>
           </div>
 
-          <Link
-            to="/contact"
-            className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-precious-cyan px-6 py-4 font-poppins text-sm font-semibold text-precious-dark transition-all duration-300 hover:-translate-y-1 hover:bg-white"
+          <button
+            type="button"
+            onClick={handleWhatsApp}
+            className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 font-montserrat text-xs font-semibold uppercase tracking-[0.12em] text-precious-dark transition-all duration-300 hover:bg-precious-cyan"
           >
-            Get Started
-
+            Book a Service
             <ArrowUpRight
-              size={18}
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              size={16}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
-          </Link>
+          </button>
         </motion.div>
       </div>
     </section>
   );
 }
-
-export default Process;

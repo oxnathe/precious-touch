@@ -1,141 +1,117 @@
 import { motion } from "motion/react";
 import {
-  ArrowUpRight,
-  Check,
+  BadgeCheck,
   Clock3,
-  ShieldCheck,
+  HeartHandshake,
   Sparkles,
-  Waves,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
+const image = "public/images/home/why.png";
 
 const reasons = [
   {
-    number: "01",
+    icon: BadgeCheck,
     title: "Professional Care",
     description:
-      "We approach every cleaning and laundry task with care, consistency, and attention to detail.",
-    icon: Sparkles,
+      "Our team approaches every space with attention to detail, care, and professionalism.",
   },
   {
-    number: "02",
+    icon: Sparkles,
     title: "Fresh Results",
     description:
-      "From your living space to your wardrobe, our goal is simple: cleaner, fresher, better.",
-    icon: Waves,
+      "We don't just clean. We leave your home, office, and belongings feeling genuinely refreshed.",
   },
   {
-    number: "03",
+    icon: HeartHandshake,
     title: "Reliable Service",
     description:
-      "A professional service experience built around clear communication and dependable care.",
-    icon: ShieldCheck,
+      "Clear communication, dependable service, and a team you can trust every time.",
   },
   {
-    number: "04",
+    icon: Clock3,
     title: "Your Time Matters",
     description:
-      "Let us handle the cleaning and laundry while you spend your time on the things that matter most.",
-    icon: Clock3,
+      "Let us handle the cleaning while you focus on the people and things that matter most.",
   },
 ];
 
-function WhyChooseUs() {
+export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-precious-dark py-24 text-white sm:py-28 lg:py-36">
-      {/* Background atmosphere */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-[30rem] w-[30rem] rounded-full bg-precious-cyan/10 blur-[120px]" />
+    <section className="relative overflow-hidden bg-precious-dark py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
+          
+          {/* LEFT */}
+          <div className="lg:sticky lg:top-28">
+            <span className="mb-5 inline-flex items-center gap-2 font-montserrat text-[10px] font-semibold uppercase tracking-[0.25em] text-precious-cyan">
+              <span className="h-1.5 w-1.5 rounded-full bg-precious-cyan" />
+              Why Precious Touch
+            </span>
 
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[35rem] w-[35rem] rounded-full bg-precious-blue/40 blur-[120px]" />
-
-      <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] [background-size:80px_80px]" />
-
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
-          {/* Left side */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.75 }}
-            className="lg:sticky lg:top-32 lg:self-start"
-          >
-            <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-precious-cyan" />
-
-              <span className="font-montserrat text-xs font-semibold uppercase tracking-[0.25em] text-precious-cyan">
-                Why Precious Touch
-              </span>
-            </div>
-
-            <h2 className="mt-6 font-oswald text-5xl font-semibold uppercase leading-[0.9] tracking-tight sm:text-6xl lg:text-7xl">
-              More than
-              <br />
-              <span className="text-precious-cyan">clean.</span>
-              <br />
-              It&apos;s care.
+            <h2 className="max-w-xl font-oswald text-5xl font-medium leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              More than clean.
+              <span className="block text-precious-cyan">It's care.</span>
             </h2>
 
-            <p className="mt-8 max-w-md font-poppins text-sm leading-8 text-white/50 sm:text-base">
-              Clean spaces and fresh clothes can change how your day feels.
-              Precious Touch is built around making that experience easier,
-              better, and more dependable.
+            <p className="mt-7 max-w-lg font-poppins text-sm leading-7 text-white/60 md:text-base">
+              We bring professional cleaning and laundry care together with
+              dependable service, attention to detail, and a genuine commitment
+              to making your everyday life easier.
             </p>
 
-            <Link
-              to="/contact"
-              className="group mt-8 inline-flex items-center gap-3 rounded-full border border-white/15 px-6 py-4 font-poppins text-sm font-semibold text-white transition-all duration-300 hover:border-precious-cyan hover:bg-precious-cyan hover:text-precious-dark"
+            {/* IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+              className="relative mt-10 overflow-hidden rounded-[2rem]"
             >
-              Experience the difference
-
-              <ArrowUpRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              <img
+                src={image}
+                alt="Precious Touch professional cleaning service"
+                className="h-[320px] w-full object-cover transition-transform duration-700 hover:scale-105 md:h-[380px]"
+                loading="lazy"
               />
-            </Link>
-          </motion.div>
 
-          {/* Right side */}
+              <div className="absolute inset-0 bg-gradient-to-t from-precious-dark/60 via-transparent to-transparent" />
+
+              <div className="absolute bottom-5 left-5">
+                <span className="rounded-full bg-white/90 px-4 py-2 font-montserrat text-[9px] font-semibold uppercase tracking-[0.18em] text-precious-blue backdrop-blur-sm">
+                  Precious Touch
+                </span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* RIGHT */}
           <div className="grid gap-4 sm:grid-cols-2">
             {reasons.map((reason, index) => {
               const Icon = reason.icon;
 
               return (
                 <motion.div
-                  key={reason.number}
+                  key={reason.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.15 }}
                   transition={{
-                    duration: 0.65,
+                    duration: 0.6,
                     delay: index * 0.08,
                   }}
-                  className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-precious-cyan/30 hover:bg-white/[0.06] sm:p-8"
+                  className="group rounded-[1.75rem] border border-white/10 bg-white/[0.045] p-7 transition-all duration-500 hover:border-precious-cyan/30 hover:bg-white/[0.07]"
                 >
-                  <div className="flex items-start justify-between">
-                    <span className="font-montserrat text-xs tracking-[0.15em] text-white/25">
-                      {reason.number}
-                    </span>
-
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 transition-all duration-500 group-hover:border-precious-cyan group-hover:bg-precious-cyan group-hover:text-precious-dark">
-                      <Icon size={19} strokeWidth={1.5} />
-                    </div>
+                  <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl border border-precious-cyan/20 bg-precious-cyan/10 text-precious-cyan transition-transform duration-500 group-hover:scale-110">
+                    <Icon size={20} strokeWidth={1.6} />
                   </div>
 
-                  <h3 className="mt-16 font-oswald text-3xl font-medium uppercase leading-none">
+                  <h3 className="font-oswald text-2xl text-white">
                     {reason.title}
                   </h3>
 
-                  <p className="mt-5 font-poppins text-sm leading-7 text-white/45">
+                  <p className="mt-4 font-poppins text-sm leading-7 text-white/50">
                     {reason.description}
                   </p>
-
-                  <div className="mt-8 flex items-center gap-2 font-montserrat text-[9px] uppercase tracking-[0.2em] text-precious-cyan">
-                    <Check size={13} />
-                    Precious Touch standard
-                  </div>
-
-                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-precious-cyan transition-all duration-500 group-hover:w-full" />
                 </motion.div>
               );
             })}
@@ -145,5 +121,3 @@ function WhyChooseUs() {
     </section>
   );
 }
-
-export default WhyChooseUs;

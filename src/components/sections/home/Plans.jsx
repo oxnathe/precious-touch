@@ -15,13 +15,15 @@ const plans = [
     name: "Essential",
     label: "EVERYDAY CARE",
     description:
-      "A simple recurring plan for keeping your space and routine consistently fresh.",
+      "Reliable care for a consistently clean, fresh, and well-maintained home.",
     icon: Sparkles,
     features: [
-      "Regular cleaning support",
-      "Laundry & ironing support",
+      "Regular professional cleaning",
+      "Laundry & ironing services",
+      "Deep home cleaning",
+      "Upholstery cleaning",
       "Flexible monthly scheduling",
-      "WhatsApp service support",
+      "Convenient WhatsApp support",
     ],
     featured: false,
     accent: "cyan",
@@ -31,15 +33,17 @@ const plans = [
     name: "Signature",
     label: "MOST POPULAR",
     description:
-      "Our balanced plan for busy people who want more consistency with less to worry about.",
+      "Our most popular plan for busy individuals and families who want reliable, consistent care without the hassle.",
     icon: Crown,
     features: [
-      "More frequent service",
-      "Cleaning + laundry support",
+      "More frequent cleaning services",
+      "Deep home cleaning",
+      "Upholstery cleaning",
+      "Cleaning + laundry services",
       "Professional ironing",
       "Priority scheduling",
       "Flexible monthly service",
-      "WhatsApp priority support",
+      "Priority WhatsApp support",
     ],
     featured: true,
     accent: "signature",
@@ -49,15 +53,17 @@ const plans = [
     name: "Prestige",
     label: "PREMIUM CARE",
     description:
-      "A higher level of recurring care designed for clients who expect a more complete experience.",
+      "Our premium recurring-care plan for clients who desire a higher standard of comfort, convenience, and personalized service.",
     icon: Gem,
     features: [
-      "Comprehensive monthly service",
-      "Regular cleaning support",
-      "Laundry & ironing",
+      "Comprehensive monthly care",
+      "Regular professional cleaning",
+      "Deep home cleaning",
+      "Premium upholstery cleaning",
+      "Laundry & professional ironing",
       "Priority scheduling",
-      "Premium service coordination",
-      "Custom service requests",
+      "Dedicated service coordination",
+      "Personalized service requests",
     ],
     featured: false,
     accent: "gold",
@@ -135,7 +141,7 @@ function Plans() {
             className="mx-auto mt-6 max-w-2xl font-poppins text-sm leading-7 text-precious-dark/60 sm:text-base"
           >
             Choose a monthly service plan that takes cleaning and laundry
-            off your mental list — so you can spend more time on what matters.
+            off your mental list so you can spend more time on what matters.
           </motion.p>
         </div>
 

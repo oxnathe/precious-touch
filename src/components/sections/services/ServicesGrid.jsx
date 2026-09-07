@@ -3,10 +3,12 @@ import { motion } from "motion/react";
 import {
   ArrowUpRight,
   Building2,
+  CarFront,
   Factory,
   Home,
   Shirt,
   WashingMachine,
+  Armchair,
 } from "lucide-react";
 
 const whatsappNumber = "2349019028248";
@@ -19,6 +21,8 @@ const services = [
       "Professional cleaning support for homes that deserve a consistently fresh and comfortable environment.",
     icon: Home,
     accent: "cyan",
+    image:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85",
   },
 
   {
@@ -28,6 +32,8 @@ const services = [
       "Cleaning solutions for offices, workspaces, and commercial environments that need to stay presentable and welcoming.",
     icon: Building2,
     accent: "blue",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
   },
 
   {
@@ -37,6 +43,8 @@ const services = [
       "Practical cleaning support for larger working environments where cleanliness and organisation matter.",
     icon: Factory,
     accent: "gold",
+    image:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=85",
   },
 
   {
@@ -46,6 +54,8 @@ const services = [
       "Professional care for your clothes and fabrics, helping keep everyday wear fresh, clean, and ready.",
     icon: Shirt,
     accent: "cyan",
+    image:
+      "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1200&q=85",
   },
 
   {
@@ -55,6 +65,30 @@ const services = [
       "A convenient combination of cleaning and ironing support for clients who want more done in one service.",
     icon: WashingMachine,
     accent: "gold",
+    image:
+      "https://images.unsplash.com/photo-1489274495757-95c7c837b101?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    number: "06",
+    title: "Upholstery Services",
+    description:
+      "We restore, refresh, repair, and transform sofas, chairs, cushions, headboards, car seats, and other upholstered furniture with quality finishing and attention to detail.",
+    icon: Armchair,
+    accent: "cyan",
+    image:
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    number: "07",
+    title: "Car Wash Services",
+    description:
+      "Professional exterior and interior vehicle cleaning including washing, vacuuming, dashboard care, tyre care, and detailed finishing for a spotless, polished result.",
+    icon: CarFront,
+    accent: "blue",
+    image:
+      "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=85",
   },
 ];
 
@@ -118,7 +152,6 @@ function ServicesGrid() {
           >
             <h2 className="font-oswald text-5xl font-semibold uppercase leading-[0.95] tracking-tight text-precious-dark sm:text-6xl lg:text-7xl">
               Care for your
-
               <span className="block bg-gradient-to-r from-precious-blue via-precious-cyan to-[#d4af37] bg-clip-text text-transparent">
                 space & routine.
               </span>
@@ -126,8 +159,9 @@ function ServicesGrid() {
 
             <p className="mt-6 max-w-2xl font-poppins text-sm leading-7 text-precious-dark/55 sm:text-base">
               Whether you need help keeping your home fresh, your workplace
-              clean, or your clothes properly cared for, choose the service
-              that fits your needs.
+              clean, your clothes properly cared for, your furniture restored,
+              or your vehicle looking its best, choose the service that fits
+              your needs.
             </p>
           </motion.div>
         </div>
@@ -160,6 +194,24 @@ function ServicesGrid() {
                     : "border-precious-cyan/15 hover:border-precious-cyan/40 hover:shadow-precious-cyan/10"
                 }`}
               >
+                {/* SERVICE IMAGE */}
+                <div className="relative mb-7 h-48 overflow-hidden rounded-[1.4rem]">
+                  <img
+                    src={service.image}
+                    alt={`${service.title} - Precious Touch`}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading={index > 1 ? "lazy" : "eager"}
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-precious-dark/60 via-precious-dark/10 to-transparent" />
+
+                  <div className="absolute bottom-4 left-4">
+                    <span className="rounded-full bg-white/90 px-3 py-1 font-montserrat text-[9px] font-semibold uppercase tracking-[0.18em] text-precious-blue backdrop-blur-sm">
+                      Precious Touch
+                    </span>
+                  </div>
+                </div>
+
                 {/* CARD GLOW */}
                 <div
                   className={`pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full blur-3xl opacity-40 transition-opacity duration-500 group-hover:opacity-80 ${
@@ -169,7 +221,7 @@ function ServicesGrid() {
                   }`}
                 />
 
-                {/* NUMBER */}
+                {/* NUMBER + ICON */}
                 <div className="relative flex items-start justify-between">
                   <span className="font-montserrat text-[10px] font-semibold tracking-[0.2em] text-precious-blue/35">
                     {service.number}
@@ -208,7 +260,6 @@ function ServicesGrid() {
                   }`}
                 >
                   Ask About This Service
-
                   <ArrowUpRight size={16} />
                 </button>
 

@@ -3,7 +3,7 @@ import ServicesPreview from "../../components/sections/home/ServicesPreview";
 import WhyChooseUs from "../../components/sections/home/WhyChooseUs";
 import Plans from "../../components/sections/home/Plans";
 import Process from "../../components/sections/home/Process";
-import Testimonials from "../../components/sections/home/Testimonials";
+
 import CTA from "../../components/sections/home/CTA";
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
       <WhyChooseUs />
       <Plans />
       <Process />
-      <Testimonials />
+      
       <CTA />
     </>
   );

@@ -16,6 +16,19 @@ function ContactHero() {
 
   return (
     <section className="relative flex min-h-[78vh] items-center overflow-hidden bg-precious-dark pt-28 text-white sm:min-h-[82vh] lg:min-h-[88vh]">
+
+      {/* HERO BACKGROUND IMAGE */}
+      <div
+        className="absolute inset-0 bg-cover bg-center lg:bg-[center_15%]"
+        style={{
+          backgroundImage:
+            "url('/images/contact/boss.png')",
+        }}
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-precious-dark/75" />
+
       {/* BACKGROUND */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-15rem] top-[-12rem] h-[36rem] w-[36rem] rounded-full bg-precious-blue/50 blur-[120px]" />
@@ -35,9 +48,12 @@ function ContactHero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
+
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+
           {/* LEFT */}
           <div>
+
             {/* EYEBROW */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -97,6 +113,7 @@ function ContactHero() {
                 <ArrowDown size={16} />
               </span>
             </motion.button>
+
           </div>
 
           {/* RIGHT VISUAL */}
@@ -106,7 +123,9 @@ function ContactHero() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="relative mx-auto w-full max-w-md lg:ml-auto"
           >
+
             <div className="relative aspect-square">
+
               {/* OUTER RING */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -137,6 +156,7 @@ function ContactHero() {
 
               {/* CENTER */}
               <div className="absolute inset-[32%] flex items-center justify-center rounded-full border border-white/10 bg-white/[0.035] backdrop-blur-sm">
+
                 <motion.div
                   animate={{
                     y: [-3, 3, -3],
@@ -148,6 +168,7 @@ function ContactHero() {
                   }}
                   className="text-center"
                 >
+
                   {/* REAL WHATSAPP ICON */}
                   <SiWhatsapp
                     className="mx-auto text-precious-cyan"
@@ -162,7 +183,9 @@ function ContactHero() {
                   <p className="font-montserrat text-[9px] uppercase tracking-[0.3em] text-[#d4af37]">
                     To Us
                   </p>
+
                 </motion.div>
+
               </div>
 
               {/* FRESH FLOATING CARD */}
@@ -175,7 +198,9 @@ function ContactHero() {
                 }}
                 className="absolute left-0 top-[22%] rounded-2xl border border-white/10 bg-white/[0.07] p-4 shadow-2xl backdrop-blur-xl"
               >
+
                 <div className="flex items-center gap-3">
+
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-precious-cyan/10 text-precious-cyan">
                     <Droplets
                       size={21}
@@ -192,7 +217,9 @@ function ContactHero() {
                       Starts here
                     </p>
                   </div>
+
                 </div>
+
               </motion.div>
 
               {/* WHATSAPP FLOATING CARD */}
@@ -205,7 +232,9 @@ function ContactHero() {
                 }}
                 className="absolute bottom-[17%] right-0 rounded-2xl border border-white/10 bg-white/[0.07] p-4 shadow-2xl backdrop-blur-xl"
               >
+
                 <div className="flex items-center gap-3">
+
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#25D366]/10 text-[#25D366]">
                     <SiWhatsapp
                       size={21}
@@ -222,12 +251,19 @@ function ContactHero() {
                       Quick response
                     </p>
                   </div>
+
                 </div>
+
               </motion.div>
+
             </div>
+
           </motion.div>
+
         </div>
+
       </div>
+
     </section>
   );
 }
