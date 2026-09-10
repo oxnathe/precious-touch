@@ -18,6 +18,7 @@ function Hero() {
         <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-precious-cyan/10 blur-3xl" />
         <div className="absolute -right-20 top-1/3 h-[28rem] w-[28rem] rounded-full bg-precious-blue/50 blur-3xl" />
         <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-precious-cyan/5 blur-3xl" />
+
         <div className="absolute inset-0 opacity-[0.035] [background-image:linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] [background-size:80px_80px]" />
       </div>
 
@@ -44,19 +45,19 @@ function Hero() {
             </motion.div>
 
             <h1 className="font-oswald text-[clamp(3.5rem,8vw,7.5rem)] font-semibold uppercase leading-[0.88] tracking-tight">
-              A cleaner
+              Wash. Dry.
               <br />
-              <span className="text-precious-cyan">space.</span>
+              <span className="text-precious-cyan">Fold.</span>
               <br />
-              A fresher
+              Clean. Protect.
               <br />
-              <span className="text-white/35">you.</span>
+              <span className="text-white/35">Repeat.</span>
             </h1>
 
             <p className="mt-8 max-w-xl font-poppins text-base leading-8 text-white/60 sm:text-lg">
-              Professional cleaning and laundry services for homes and
-              businesses in Lagos. We take care of the details so you can
-              focus on what matters.
+              From laundry and home & office cleaning to fumigation and pest
+              control, Precious Touch keeps your clothes fresh, your spaces
+              spotless, and your environment protected.
             </p>
 
             {/* CTA BUTTONS */}
@@ -180,7 +181,6 @@ function Hero() {
                   {/* PT MARK */}
                   <div className="relative flex h-24 w-24 items-center justify-center">
                     <div className="absolute inset-0 rounded-full border border-precious-cyan/30" />
-
                     <div className="absolute inset-2 rounded-full border border-white/10" />
 
                     <Droplets

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import { useLocation, useNavigate } from "react-router-dom";
+
 import { Menu } from "lucide-react";
 
 import { siteConfig } from "../../data/site";
@@ -9,7 +11,6 @@ const whatsappNumber = "2349019028248";
 function Navbar({ onMenuOpen }) {
   const location = useLocation();
   const navigate = useNavigate();
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -58,8 +59,18 @@ function Navbar({ onMenuOpen }) {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "border-b border-precious-blue/10 bg-white/95 shadow-[0_8px_30px_rgba(4,28,51,0.08)] backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
+    >
+      <nav
+        className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-500 sm:px-8 lg:px-10 ${
+          isScrolled ? "py-3.5" : "py-5"
+        }`}
+      >
         {/* LOGO */}
         <button
           type="button"
@@ -67,7 +78,13 @@ function Navbar({ onMenuOpen }) {
           className="group flex items-center gap-3"
           aria-label="Precious Touch Home"
         >
-          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white">
+          <div
+            className={`flex h-11 w-11 items-center justify-center overflow-hidden rounded-full transition-all duration-500 ${
+              isScrolled
+                ? "bg-precious-light shadow-sm"
+                : "bg-white"
+            }`}
+          >
             <img
               src="/logo/precious-touch-logo.webp"
               alt="Precious Touch Cleaning & Laundry Services"
@@ -76,7 +93,11 @@ function Navbar({ onMenuOpen }) {
           </div>
 
           <div className="hidden sm:block">
-            <div className="font-oswald text-xl font-semibold uppercase tracking-wide text-white">
+            <div
+              className={`font-oswald text-xl font-semibold uppercase tracking-wide transition-colors duration-500 ${
+                isScrolled ? "text-precious-dark" : "text-white"
+              }`}
+            >
               Precious Touch
             </div>
 
@@ -99,7 +120,9 @@ function Navbar({ onMenuOpen }) {
                 className={`relative py-2 font-poppins text-sm font-medium transition-colors duration-300 ${
                   isActive
                     ? "text-precious-cyan"
-                    : "text-white hover:text-precious-cyan"
+                    : isScrolled
+                      ? "text-precious-dark hover:text-precious-blue"
+                      : "text-white hover:text-precious-cyan"
                 }`}
               >
                 {item.label}
@@ -117,7 +140,7 @@ function Navbar({ onMenuOpen }) {
           <button
             type="button"
             onClick={handleWhatsApp}
-            className="rounded-full bg-precious-cyan px-6 py-3 font-poppins text-sm font-semibold text-precious-dark transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
+            className="rounded-full bg-precious-cyan px-6 py-3 font-poppins text-sm font-semibold text-precious-dark transition-all duration-300 hover:-translate-y-0.5 hover:bg-precious-blue hover:text-white"
           >
             Book a Service
           </button>

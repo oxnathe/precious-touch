@@ -1,49 +1,35 @@
 import { motion } from "motion/react";
+
 import {
   ArrowUpRight,
-  Building2,
-  Factory,
   Shirt,
   Sparkles,
-  Home as HomeIcon,
+  Bug,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 const services = [
   {
     number: "01",
-    title: "Residential Cleaning",
+    title: "Laundry & Ironing",
     description:
-      "Thoughtful cleaning for homes, apartments, and everyday living spaces.",
-    icon: HomeIcon,
-  },
-  {
-    number: "02",
-    title: "Commercial Cleaning",
-    description:
-      "Professional cleaning solutions that keep your business environment fresh and presentable.",
-    icon: Building2,
-  },
-  {
-    number: "03",
-    title: "Industrial Cleaning",
-    description:
-      "Reliable cleaning support for larger facilities and demanding work environments.",
-    icon: Factory,
-  },
-  {
-    number: "04",
-    title: "Laundry & Dry Cleaning",
-    description:
-      "Carefully handled laundry and garment cleaning to keep your clothes fresh and ready.",
+      "Professional laundry, washing, drying, folding, and ironing care to keep your clothes fresh and ready.",
     icon: Shirt,
   },
   {
-    number: "05",
-    title: "Cleaning & Ironing",
+    number: "02",
+    title: "Cleaning & Upholstery",
     description:
-      "A polished finish for your clothes, with professional cleaning and ironing care.",
+      "Thorough cleaning for homes, offices, and upholstery, creating fresh, spotless, and comfortable spaces.",
     icon: Sparkles,
+  },
+  {
+    number: "03",
+    title: "Fumigation & Pest Control",
+    description:
+      "Reliable fumigation and pest control solutions to help keep your home, office, and environment protected.",
+    icon: Bug,
   },
 ];
 
@@ -87,9 +73,9 @@ function ServicesPreview() {
             className="max-w-2xl lg:ml-auto"
           >
             <p className="font-poppins text-base leading-8 text-precious-dark/60 sm:text-lg">
-              From the spaces you live in to the spaces you work in, we bring
-              professional care, attention to detail, and a fresh standard of
-              cleanliness.
+              From fresh laundry and spotless spaces to a protected
+              environment, we provide professional care for homes,
+              offices, and businesses.
             </p>
 
             <Link

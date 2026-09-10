@@ -16,13 +16,11 @@ function ContactHero() {
 
   return (
     <section className="relative flex min-h-[78vh] items-center overflow-hidden bg-precious-dark pt-28 text-white sm:min-h-[82vh] lg:min-h-[88vh]">
-
       {/* HERO BACKGROUND IMAGE */}
       <div
         className="absolute inset-0 bg-cover bg-center lg:bg-[center_15%]"
         style={{
-          backgroundImage:
-            "url('/images/contact/boss.png')",
+          backgroundImage: "url('/images/contact/boss.png')",
         }}
       />
 
@@ -48,12 +46,9 @@ function ContactHero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
-
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-
           {/* LEFT */}
           <div>
-
             {/* EYEBROW */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -66,6 +61,8 @@ function ContactHero() {
               <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70">
                 Get In Touch
               </span>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#d4af37]" />
             </motion.div>
 
             {/* HEADING */}
@@ -75,14 +72,19 @@ function ContactHero() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="max-w-4xl font-oswald text-6xl font-semibold uppercase leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl"
             >
-              Let’s make
-
+              Cleaner
               <span className="block text-precious-cyan">
-                fresh
+                clothes.
               </span>
 
+              Fresher
               <span className="block bg-gradient-to-r from-white via-white to-[#d4af37] bg-clip-text text-transparent">
-                happen.
+                spaces.
+              </span>
+
+              Protected
+              <span className="block text-white/40">
+                homes.
               </span>
             </motion.h1>
 
@@ -93,9 +95,9 @@ function ContactHero() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="mt-7 max-w-2xl font-poppins text-sm leading-7 text-white/60 sm:text-base"
             >
-              Ready for a cleaner space or fresher clothes? Tell us what you
-              need and our team will help you find the right Precious Touch
-              service.
+              From laundry and ironing to professional home and office
+              cleaning, fumigation, and pest control  Precious Touch has
+              you covered.
             </motion.p>
 
             {/* CTA */}
@@ -113,7 +115,6 @@ function ContactHero() {
                 <ArrowDown size={16} />
               </span>
             </motion.button>
-
           </div>
 
           {/* RIGHT VISUAL */}
@@ -123,9 +124,7 @@ function ContactHero() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="relative mx-auto w-full max-w-md lg:ml-auto"
           >
-
             <div className="relative aspect-square">
-
               {/* OUTER RING */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -156,7 +155,6 @@ function ContactHero() {
 
               {/* CENTER */}
               <div className="absolute inset-[32%] flex items-center justify-center rounded-full border border-white/10 bg-white/[0.035] backdrop-blur-sm">
-
                 <motion.div
                   animate={{
                     y: [-3, 3, -3],
@@ -168,7 +166,6 @@ function ContactHero() {
                   }}
                   className="text-center"
                 >
-
                   {/* REAL WHATSAPP ICON */}
                   <SiWhatsapp
                     className="mx-auto text-precious-cyan"
@@ -183,9 +180,7 @@ function ContactHero() {
                   <p className="font-montserrat text-[9px] uppercase tracking-[0.3em] text-[#d4af37]">
                     To Us
                   </p>
-
                 </motion.div>
-
               </div>
 
               {/* FRESH FLOATING CARD */}
@@ -198,14 +193,9 @@ function ContactHero() {
                 }}
                 className="absolute left-0 top-[22%] rounded-2xl border border-white/10 bg-white/[0.07] p-4 shadow-2xl backdrop-blur-xl"
               >
-
                 <div className="flex items-center gap-3">
-
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-precious-cyan/10 text-precious-cyan">
-                    <Droplets
-                      size={21}
-                      strokeWidth={1.5}
-                    />
+                    <Droplets size={21} strokeWidth={1.5} />
                   </div>
 
                   <div>
@@ -217,9 +207,7 @@ function ContactHero() {
                       Starts here
                     </p>
                   </div>
-
                 </div>
-
               </motion.div>
 
               {/* WHATSAPP FLOATING CARD */}
@@ -232,9 +220,7 @@ function ContactHero() {
                 }}
                 className="absolute bottom-[17%] right-0 rounded-2xl border border-white/10 bg-white/[0.07] p-4 shadow-2xl backdrop-blur-xl"
               >
-
                 <div className="flex items-center gap-3">
-
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#25D366]/10 text-[#25D366]">
                     <SiWhatsapp
                       size={21}
@@ -251,19 +237,12 @@ function ContactHero() {
                       Quick response
                     </p>
                   </div>
-
                 </div>
-
               </motion.div>
-
             </div>
-
           </motion.div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

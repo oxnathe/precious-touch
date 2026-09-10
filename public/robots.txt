@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://precious-touch-drab.vercel.app/sitemap.xml
+Sitemap: https://precioustouchclean.com.ng/sitemap.xml
